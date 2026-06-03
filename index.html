@@ -80,6 +80,111 @@
             color: #fff;
         }
 
+        /* Performance Module Styles */
+        .perf-container {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .perf-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .perf-title h3 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .perf-title p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .friction-badge {
+            font-size: 0.8rem;
+            background-color: #1e1b12;
+            border: 1px solid var(--accent-orange);
+            color: var(--accent-orange);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .metrics-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-tile {
+            background-color: var(--bg-card-header);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .metric-tile span {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-tile strong {
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .metric-tile strong.positive { color: var(--accent-green); }
+        .metric-tile strong.negative { color: var(--accent-red); }
+
+        /* Core Engine Library Section */
+        .library-box {
+            background: linear-gradient(135deg, #121824 0%, #162235 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .library-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .library-tag {
+            background: rgba(0, 176, 255, 0.06);
+            border: 1px solid rgba(0, 176, 255, 0.2);
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .library-tag::before {
+            content: '▹';
+            color: var(--accent-blue);
+        }
+
         /* SaaS Grid Style */
         .saas-grid {
             display: grid;
@@ -94,7 +199,6 @@
             border-radius: 6px;
             padding: 1.5rem;
             position: relative;
-            overflow: hidden;
         }
 
         .saas-card::before {
@@ -166,9 +270,6 @@
             letter-spacing: 0.05em;
             margin-bottom: 0.75rem;
             font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
         .tier-1 { color: var(--accent-green); }
@@ -230,6 +331,124 @@
         <p>Full-Stack Quant (Researcher | Developer | Trader)</p>
         <div class="markets-badge">Forex • Crypto • Futures</div>
     </header>
+
+    <!-- Verified Live Production Backtest -->
+    <h2 class="section-title">Production Backtest Spotlight</h2>
+    <div class="perf-container">
+        <div class="perf-header">
+            <div class="perf-title">
+                <h3>🏆 USDCHF STEP 2 — PRECISION BOOST</h3>
+                <p><strong>Logic:</strong> Pure MBOS (SW 15 / TP 4.0) + Dynamic Risk (0.0035-0.0075) + MACD Filter | Active Session 07-18</p>
+            </div>
+            <div class="friction-badge">
+                Friction: 0.5p Spread + 0.15p Slip + $5.0 RT Comms
+            </div>
+        </div>
+
+        <div class="metrics-summary-grid">
+            <div class="metric-tile">
+                <span>Net Return (3-Year)</span>
+                <strong class="positive">+241.37%</strong>
+            </div>
+            <div class="metric-tile">
+                <span>Max Drawdown</span>
+                <strong class="negative">10.66%</strong>
+            </div>
+            <div class="metric-tile">
+                <span>Win Rate</span>
+                <strong class="positive">60.7%</strong>
+            </div>
+            <div class="metric-tile">
+                <span>Trades / Year</span>
+                <strong>1,103</strong>
+            </div>
+            <div class="metric-tile">
+                <span>Worst Month</span>
+                <strong class="negative">-5.20%</strong>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year / Month</th>
+                        <th>Net Return %</th>
+                        <th>Total Trades</th>
+                        <th>Wins</th>
+                        <th>Losses</th>
+                        <th>Win %</th>
+                        <th>Max DD %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 2023 -->
+                    <tr style="background-color: rgba(255,255,255,0.02);"><td colspan="7"><strong>📊 2023 Performance Logs (74,294 Bars Processed)</strong></td></tr>
+                    <tr><td>2023-01</td><td class="status-check">+9.02%</td><td>72</td><td>49</td><td>23</td><td>68.1%</td><td>-0.00%</td></tr>
+                    <tr><td>2023-02</td><td class="status-check">+0.79%</td><td>53</td><td>25</td><td>28</td><td>47.2%</td><td>0.61%</td></tr>
+                    <tr><td>2023-03</td><td class="status-check">+7.19%</td><td>72</td><td>45</td><td>27</td><td>62.5%</td><td>0.22%</td></tr>
+                    <tr><td>2023-04</td><td class="status-check">+7.11%</td><td>67</td><td>39</td><td>28</td><td>58.2%</td><td>1.56%</td></tr>
+                    <tr><td>2023-05</td><td class="status-check">+1.46%</td><td>72</td><td>43</td><td>29</td><td>59.7%</td><td>1.63%</td></tr>
+                    <tr><td>2023-06</td><td class="status-check">+3.86%</td><td>83</td><td>47</td><td>36</td><td>56.6%</td><td>1.07%</td></tr>
+                    <tr><td>2023-07</td><td class="status-check">+0.85%</td><td>69</td><td>38</td><td>31</td><td>55.1%</td><td>1.39%</td></tr>
+                    <tr><td>2023-08</td><td class="status-check">+8.70%</td><td>69</td><td>45</td><td>24</td><td>65.2%</td><td>0.15%</td></tr>
+                    <tr><td>2023-09</td><td class="status-warn">-3.47%</td><td>51</td><td>26</td><td>25</td><td>51.0%</td><td>3.64%</td></tr>
+                    <tr><td>2023-10</td><td class="status-check">+5.18%</td><td>73</td><td>47</td><td>26</td><td>64.4%</td><td>2.69%</td></tr>
+                    <tr><td>2023-11</td><td class="status-warn">-5.20%</td><td>69</td><td>34</td><td>35</td><td>49.3%</td><td>5.53%</td></tr>
+                    <tr><td>2023-12</td><td class="status-check">+0.94%</td><td>57</td><td>29</td><td>28</td><td>50.9%</td><td>2.67%</td></tr>
+                    <tr style="border-top: 2px solid var(--border-color); font-weight: bold;"><td>2023 TOTAL</td><td class="status-check">+41.58%</td><td>807</td><td>467</td><td>340</td><td>57.9%</td><td>5.53%</td></tr>
+
+                    <!-- 2024 -->
+                    <tr style="background-color: rgba(255,255,255,0.02);"><td colspan="7"><strong>📊 2024 Performance Logs</strong></td></tr>
+                    <tr><td>2024-01</td><td class="status-check">+2.39%</td><td>67</td><td>40</td><td>27</td><td>59.7%</td><td>1.91%</td></tr>
+                    <tr><td>2024-02</td><td class="status-check">+0.77%</td><td>67</td><td>38</td><td>29</td><td>56.7%</td><td>2.86%</td></tr>
+                    <tr><td>2024-03</td><td class="status-warn">-0.82%</td><td>63</td><td>34</td><td>29</td><td>54.0%</td><td>2.71%</td></tr>
+                    <tr><td>2024-04</td><td class="status-warn">-1.03%</td><td>51</td><td>27</td><td>24</td><td>52.9%</td><td>2.88%</td></tr>
+                    <tr><td>2024-05</td><td class="status-check">+3.83%</td><td>65</td><td>38</td><td>27</td><td>58.5%</td><td>0.37%</td></tr>
+                    <tr><td>2024-06</td><td class="status-warn">-1.27%</td><td>59</td><td>34</td><td>25</td><td>57.6%</td><td>5.11%</td></tr>
+                    <tr><td>2024-07</td><td class="status-check">+13.17%</td><td>72</td><td>50</td><td>22</td><td>69.4%</td><td>0.53%</td></tr>
+                    <tr><td>2024-08</td><td class="status-check">+10.92%</td><td>64</td><td>45</td><td>19</td><td>70.3%</td><td>1.05%</td></tr>
+                    <tr><td>2024-09</td><td class="status-check">+2.48%</td><td>64</td><td>39</td><td>25</td><td>60.9%</td><td>3.45%</td></tr>
+                    <tr><td>2024-10</td><td class="status-warn">-1.51%</td><td>73</td><td>37</td><td>36</td><td>50.7%</td><td>2.59%</td></tr>
+                    <tr><td>2024-11</td><td class="status-check">+4.14%</td><td>62</td><td>41</td><td>21</td><td>66.1%</td><td>0.91%</td></tr>
+                    <tr><td>2024-12</td><td class="status-check">+11.35%</td><td>66</td><td>48</td><td>18</td><td>72.7%</td><td>2.06%</td></tr>
+                    <tr style="border-top: 2px solid var(--border-color); font-weight: bold;"><td>2024 TOTAL</td><td class="status-check">+74.37%</td><td>773</td><td>471</td><td>302</td><td>60.9%</td><td>5.11%</td></tr>
+
+                    <!-- 2025 -->
+                    <tr style="background-color: rgba(255,255,255,0.02);"><td colspan="7"><strong>📊 2025 Performance Logs</strong></td></tr>
+                    <tr><td>2025-01</td><td class="status-check">+3.37%</td><td>69</td><td>42</td><td>27</td><td>60.9%</td><td>2.04%</td></tr>
+                    <tr><td>2025-02</td><td class="status-check">+2.21%</td><td>59</td><td>37</td><td>22</td><td>62.7%</td><td>0.21%</td></tr>
+                    <tr><td>2025-03</td><td class="status-check">+6.80%</td><td>66</td><td>42</td><td>24</td><td>63.6%</td><td>1.01%</td></tr>
+                    <tr><td>2025-04</td><td class="status-check">+0.52%</td><td>67</td><td>36</td><td>31</td><td>53.7%</td><td>3.34%</td></tr>
+                    <tr><td>2025-05</td><td class="status-check">+3.37%</td><td>59</td><td>35</td><td>24</td><td>59.3%</td><td>0.88%</td></tr>
+                    <tr><td>2025-06</td><td class="status-check">+3.16%</td><td>50</td><td>32</td><td>18</td><td>64.0%</td><td>0.12%</td></tr>
+                    <tr><td>2025-07</td><td class="status-check">+8.55%</td><td>73</td><td>47</td><td>26</td><td>64.4%</td><td>1.18%</td></tr>
+                    <tr><td>2025-08</td><td class="status-check">+2.28%</td><td>65</td><td>43</td><td>22</td><td>66.2%</td><td>0.00%</td></tr>
+                    <tr><td>2025-09</td><td class="status-check">+3.20%</td><td>75</td><td>46</td><td>29</td><td>61.3%</td><td>0.38%</td></tr>
+                    <tr><td>2025-10</td><td class="status-check">+4.15%</td><td>67</td><td>45</td><td>22</td><td>67.2%</td><td>2.75%</td></tr>
+                    <tr><td>2025-11</td><td class="status-check">+11.98%</td><td>72</td><td>54</td><td>18</td><td>75.0%</td><td>0.47%</td></tr>
+                    <tr><td>2025-12</td><td class="status-warn">-2.20%</td><td>60</td><td>36</td><td>24</td><td>60.0%</td><td>2.20%</td></tr>
+                    <tr style="border-top: 2px solid var(--border-color); font-weight: bold;"><td>2025 TOTAL</td><td class="status-check">+125.43%</td><td>782</td><td>495</td><td>287</td><td>63.3%</td><td>3.34%</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Core Strategy Libraries -->
+    <div class="library-box">
+        <h3 style="color: #fff; font-size: 1.3rem;">Engine Infrastructure & Trading Libraries</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0.25rem;">
+            Custom quant architectures developed for Forex, Futures, and Crypto assets. Built mathematically clean and structurally sound: completely isolated from lookahead bias, unrealistic assumptions, or hidden modeling overhead costs—then systematically deployed as native live algorithmic execution bots (MQL5 EAs / Python API Drivers) enforcing strict parameter-level risk parameters.
+        </p>
+        <div class="library-grid">
+            <div class="library-tag">Market Structure / BOS Frameworks</div>
+            <div class="library-tag">Volume-Weighted Average Price (VWAP) Session Engines</div>
+            <div class="library-tag">Statistical Mean Reversion Systems</div>
+            <div class="library-tag">Systematic Trend-Following Matrix</div>
+            <div class="library-tag">High-Momentum Breakout Filters</div>
+            <div class="library-tag">Liquidity Sweep & Stop Hunt Rejections</div>
+        </div>
+    </div>
 
     <!-- Live Production SaaS Section -->
     <h2 class="section-title">Live SaaS Ecosystem</h2>
